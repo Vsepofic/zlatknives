@@ -1,0 +1,53 @@
+%ic {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothhing: grayscale;
+}
+[class*="_icon-"] {
+  &::before {
+    @extend %ic;
+    display: block;
+  }
+}
+
+._icon-logo:before {
+  content: "\e900";
+}
+._icon-Group-1:before {
+  content: "\e901";
+}
+._icon-Group-21:before {
+  content: "\e902";
+}
+._icon-Group-2:before {
+  content: "\e903";
+}
+._icon-Group-60:before {
+  content: "\e904";
+}
+._icon-Group-65:before {
+  content: "\e905";
+}
+._icon-Group-66:before {
+  content: "\e906";
+}
+._icon-Group-71:before {
+  content: "\e907";
+}
+._icon-Group-73:before {
+  content: "\e908";
+}
+._icon-Group:before {
+  content: "\e909";
+}
+._icon-_1:before {
+  content: "\e90a";
+}
+._icon-_:before {
+  content: "\e90b";
+}

@@ -1,0 +1,84 @@
+.pagging {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: rem(30);
+  // .pagging__arrow
+
+  &__arrow {
+    & svg {
+      path {
+        fill: $decorColor;
+      }
+    }
+    &:disabled {
+      & svg {
+        path {
+          fill: rgba($mainColor, 0.12);
+        }
+      }
+    }
+  }
+
+  // .pagging__arrow-left
+
+  &__arrow-left {
+    transform: rotate(180deg);
+  }
+
+  // .pagging__arrow-right
+
+  &__arrow-right {
+  }
+
+  // .pagging__arrow-left-img
+
+  &__arrow-left-img {
+  }
+
+  // .pagging__list
+
+  &__list {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    gap: rem(15);
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+
+  // .pagging__item
+
+  &__item {
+  }
+
+  // .pagging__link
+
+  &__link {
+    @include adaptiveValue("font-size", 18, 16, 1);
+    @include adaptiveValue("line-height", 32, 20, 1);
+    width: rem(34);
+    height: rem(34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    &.active {
+      color: $whiteColor;
+      background: $decorColor;
+    }
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        transition: all 0.3s ease 0s;
+        color: $whiteColor;
+        background: $decorColor;
+      }
+    }
+  }
+
+  // .pagging__arrow-right-img
+
+  &__arrow-right-img {
+  }
+}

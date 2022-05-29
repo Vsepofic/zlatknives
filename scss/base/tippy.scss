@@ -1,0 +1,71 @@
+[data-tooltip] {
+  position: absolute; /* Относительное позиционирование */
+}
+[data-tooltip]::after {
+  content: attr(data-tooltip); /* Выводим текст */
+  position: absolute; /* Абсолютное позиционирование */
+  width: auto; /* Ширина подсказки */
+  border-radius: 5%;
+  left: 0;
+  top: 0; /* Положение подсказки */
+  background: rgba($mainDarkColor, 0.3); /* цвет фона */
+  color: $whiteColor; /* Цвет текста */
+  padding: rem(10) rem(15); /* Поля вокруг текста */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Параметры тени */
+  pointer-events: none; /* Подсказка */
+  opacity: 0; /* Подсказка невидима */
+  transition: 1s; /* Время появления подсказки */
+  font-size: rem(14);
+  line-height: rem(20);
+  text-align: end;
+}
+[data-tooltip]:hover::after {
+  opacity: 1; /* Показываем подсказку */
+  top: rem(30); /* Положение подсказки */
+}
+// ***********************************************
+[data-tooltip-2] {
+  position: absolute; /* Относительное позиционирование */
+}
+[data-tooltip-2]::before {
+  content: attr(data-tooltip-2); /* Выводим текст */
+  position: absolute; /* Абсолютное позиционирование */
+  width: rem(400); /* Ширина подсказки */
+  border: 1px solid $decorColor;
+  border-radius: 3px;
+  left: rem(-360);
+  top: rem(-75); /* Положение подсказки */
+  background: $whiteColor; /* цвет фона */
+  color: black; /* Цвет текста */
+  padding: rem(20) rem(15); /* Поля вокруг текста */
+  box-shadow: 0px 4px 20px rgba(20, 20, 20, 0.1); /* Параметры тени */
+  pointer-events: none; /* Подсказка */
+  opacity: 0; /* Подсказка невидима */
+  transition: 1s; /* Время появления подсказки */
+  font-size: rem(14);
+  line-height: rem(22);
+  z-index: 2;
+  // text-align: end;
+}
+[data-tooltip-2]:hover::before {
+  opacity: 1; /* Показываем подсказку */
+  top: rem(-125); /* Положение подсказки */
+}
+[data-tooltip-2]::after {
+  content: "";
+  position: absolute;
+  opacity: 0; /* Подсказка невидима */
+  transition: 1s; /* Время появления подсказки */
+  top: rem(22);
+  left: rem(0);
+  width: rem(20);
+  height: rem(20);
+  transform: rotate(-45deg);
+  background: $whiteColor;
+  border: 1px solid $decorColor;
+  border-color: transparent transparent $decorColor $decorColor;
+}
+[data-tooltip-2]:hover::after {
+  opacity: 1; /* Показываем подсказку */
+  top: rem(-28); /* Положение подсказки */
+}

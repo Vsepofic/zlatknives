@@ -1,0 +1,49 @@
+// https://refreshless.com/nouislider/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.noUi-target {
+  background: $decorColor;
+  height: 2px;
+  border-radius: 2px;
+  border: none;
+  box-shadow: none;
+}
+.noUi-connect {
+  background: $mainColor;
+}
+.noUi-horizontal .noUi-handle {
+  width: rem(18);
+  height: rem(18);
+  border: 3px solid $decorColor;
+  border-radius: 50%;
+  background: $mainColor;
+  cursor: pointer;
+  box-shadow: none;
+}
+.noUi-horizontal .noUi-handle.noUi-handle-lower {
+  right: rem(-17);
+  top: rem(-7);
+}
+.noUi-horizontal .noUi-handle.noUi-handle-upper {
+  right: -1px;
+  top: rem(-7);
+}
+.noUi-handle:before,
+.noUi-handle::after {
+  display: none;
+}
+.noUi-horizontal .noUi-tooltip {
+  top: 150%;
+  border: none;
+  background: transparent;
+}

@@ -1,0 +1,45 @@
+//  Общий файл элементов форм
+// Для подключения/отключения стилей конкретного элемента
+// Стили форм
+@import "base/forms/forms";
+// Стили слайдер swiper
+// @import "base/swiper";
+// Стили слайдер noUiSlider
+// https://refreshless.com/nouislider/
+@import "range-slider";
+// Стили попапов
+// @import "base/popup";
+// Стили спойлеров
+// @import "base/spollers";
+// Стили табов
+@import "tabs";
+// Стили хлебных крошек
+@import "breadcrumbs";
+// Стили пагинации
+@import "pagination";
+// Стили карт
+// @import "base/maps";
+
+// стили блока "показать еще"
+// @import "base/showmore";
+// Стили для полноэкранного блока
+// @import "base/fullscreen";
+// Стили для липкого блока
+// @import "base/sticky";
+// Стили для отзывчивых картинок (IBG)
+// Сниппет (HTML): ibg (div с картинкой и классами)
+// Сниппет (HTML): ibga (a с картинкой и классами)
+// [class*="-ibg"] {
+//   position: relative;
+//   img {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     top: 0;
+//     left: 0;
+//     object-fit: cover;
+//   }
+// }
+// Модуль работы с подсказками (tippy)
+@import "tippy";
+// **

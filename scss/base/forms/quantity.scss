@@ -1,0 +1,35 @@
+.quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  max-width: rem(151);
+  .quantity__button-plus,
+  .quantity__button-minus {
+    @include adaptiveValue("font-size", 24, 22, 1);
+    @include adaptiveValue("line-height", 29, 24, 1);
+    width: 50px;
+    height: 50px;
+    background: #141414;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 8px 5px 8px 5px;
+    // border: 1px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+  }
+  input {
+    @include adaptiveValue("font-size", 18, 16, 1);
+    @include adaptiveValue("line-height", 22, 18, 1);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    // border: 1px solid #ddd;
+    background: rgba(210, 210, 210, 0.07);
+    color: #000;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

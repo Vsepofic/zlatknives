@@ -1,0 +1,34 @@
+//* Подключение шрифтов ---------------------------------------
+//* Клавиша 'F1' - поиск - 'Google Font' (вставляется некорректно!)
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+
+// Шрифт по умолчанию --------------------------------------
+//***                   @extend %fontMontserratNormal;
+%fontMontserratNormal {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  // font-size: 16px !important;
+  // line-height: 24px !important;
+}
+// Первый дополнительный шрифт
+//***                @extend %fontMontserrat600;
+%fontMontserrat600 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  // font-size: 18px;
+  // line-height: 21px;
+  // text-transform: uppercase;
+}
+// Второй дополнительный шрифт
+
+//***                 @extend %fontMontserratSlab;
+%fontMontserratSlab {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  // font-size: 24px;
+  // line-height: 120%;
+}

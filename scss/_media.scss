@@ -1,0 +1,80 @@
+// ***   Адаптив *********************************
+// Адаптивное свойство ------------------------------
+// https://www.youtube.com/watch?v=eaOAY0vIB4U
+// Минимальная ширина страницы
+$minW: 320;
+// Ширина полотна (макета)
+$maxWidthContF: 1920;
+// Ширина ограничивающего контейнера ( 0 - нет ограничения)
+$maxWidthCont: 1600;
+// Миксин адаптива  @include adaptiveValue("column-gap", 30, 10, 1);
+@mixin adaptiveValue($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    // Только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthCont + px}) {
+      #{$property}: calc(
+        #{$minSize + px} + #{$addSize} *
+          ((100vw - #{$minW + px}) / #{$maxWidthCont - $minW})
+      );
+    }
+  } @else if $type==2 {
+    // Только если больше контейнера
+    #{$property}: $startSize + px;
+    @media (min-width: #{$maxWidthCont + px}) {
+      #{$property}: calc(
+        #{$minSize + px} + #{$addSize} *
+          ((100vw - #{$minW + px}) / #{$maxWidthContF - $minW})
+      );
+    }
+  } @else {
+    // Всегда
+    #{$property}: calc(
+      #{$minSize +
+        px} +
+        #{$addSize} *
+        ((100vw - #{$minW + px}) / #{$maxWidthContF - $minW})
+    );
+  }
+}
+// ? Заготовка при наведении
+// *
+// transition: all 0.3s ease 0s;
+// @media (any-hover: hover) {
+//       &:hover {
+//         transition: all 0.3s ease 0s;
+//       }
+//     }
+// ? Заготовка для отступа
+// *
+// &:not(:last-child) {
+//       margin-bottom: rem(25);
+//     }
+
+// Тип адаптива ---------------------------------------
+// 1 = отзывчивость ( у контейнера нет брек-поинтов),
+// 2 = по брекпоинтам ( контейнер меняет свою ширину по брек-поинтам )
+$responsiveType: 1;
+
+// Ширина срабатывания первого брек-поинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+// 2 брек-поинт
+$breakPoint2: 1400;
+// Брек-поинты 1,15,01
+$large: 1399.98px; // ПК в горизонтальном состоянии
+$ps: 1199.98px; // ПК, ноутбуки, некоторые планшеты в горизонтальном состоянии
+$tablet: 991.98px; // Планшеты, некоторые телефоны в горизонтальном состоянии
+$mobile: 767.98px; // Телефоны L
+$mobileSmall: 575.98px; // Телефоны S
+
+@media (max-width: 1399.98px) {
+}
+@media (max-width: 1199.98px) {
+}
+@media (max-width: 991.98px) {
+}
+@media (max-width: 767.98px) {
+}
+@media (max-width: 575.98px) {
+}

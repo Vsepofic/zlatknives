@@ -1,0 +1,311 @@
+.page {
+  // .page__header
+
+  &__header {
+    margin-bottom: rem(30);
+  }
+
+  // .page__container
+
+  &__container {
+    @extend %container;
+  }
+
+  // .page__title
+
+  &__title {
+    @extend %fontMontserratSlab;
+    @include adaptiveValue("font-size", 24, 22, 1);
+    @include adaptiveValue("line-height", 29, 24, 1);
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+    }
+  }
+}
+
+.catalog {
+  @include adaptiveValue("padding-bottom", 120, 80, 1);
+
+  // .catalog__container
+
+  &__container {
+    @extend %container;
+  }
+
+  // .catalog__body
+
+  &__body {
+    display: grid;
+    gap: rem(30);
+    @media (min-width: $tablet) {
+      grid-template-columns: rem(375) 1fr;
+    }
+    // @media (min-width: $mobile) {
+    //   grid-template-columns: rem(300) 1fr;
+    // }
+  }
+
+  // .catalog__filter
+
+  &__filter {
+    background: #fefefe;
+    // box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  // .catalog__content
+
+  &__content {
+  }
+
+  // .catalog__control
+
+  &__control {
+    display: flex;
+    justify-content: flex-end;
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  // .catalog__products
+
+  &__products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+    gap: rem(30);
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+  }
+  // .catalog__footer
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(20);
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      gap: rem(30);
+    }
+  }
+
+  // .catalog__more
+
+  &__more {
+  }
+
+  // .catalog__pagging
+
+  &__pagging {
+  }
+}
+
+.button {
+}
+.filter-catalog {
+  // .filter-catalog__title
+
+  &__title {
+    @extend %fontMontserratSlab;
+    @include adaptiveValue("font-size", 20, 18, 1);
+    @include adaptiveValue("line-height", 24, 20, 1);
+    background: $mainDarkColor;
+    color: $whiteColor;
+    padding: rem(23) 0;
+    @include adaptiveValue("padding-left", 30, 20, 1);
+    @include adaptiveValue("padding-right", 30, 20, 1);
+    @media (max-width: $tablet) {
+      cursor: pointer;
+    }
+  }
+
+  // .filter-catalog__items
+
+  &__items {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    @media (max-width: $tablet) {
+      display: none;
+      transition: all 0.3s ease-in-out 0s;
+      &.spoiler-body {
+        display: block;
+        transition: all 0.3s ease-in-out 0s;
+      }
+    }
+  }
+
+  // .filter-catalog__price
+
+  &__price {
+  }
+
+  // .filter-catalog__item
+
+  &__item {
+  }
+}
+.price-filter {
+  // .price-filter__title
+
+  &__title {
+    @extend %fontMontserrat600;
+    @include adaptiveValue("font-size", 20, 18, 1);
+    @include adaptiveValue("line-height", 24, 20, 1);
+    color: $mainDarkColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: rem(30) 0;
+    @include adaptiveValue("padding-left", 30, 20, 1);
+    @include adaptiveValue("padding-right", 30, 20, 1);
+    &.spoller-init {
+      & .filter__img {
+        transform: rotate(540deg);
+        transition: all 0.3s ease 0s;
+      }
+    }
+  }
+
+  // .price-filter__body
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    flex-direction: column;
+    @include adaptiveValue("padding-left", 30, 20, 1);
+    @include adaptiveValue("padding-right", 30, 20, 1);
+    transition: all 0.3s ease-in-out 0s;
+    &.spoiler-body {
+      display: none;
+      transition: all 0.3s ease-in-out 0s;
+    }
+  }
+
+  // .price-filter__inputs
+
+  &__inputs {
+    display: flex;
+    border: 1px solid #cbcbcb;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+  }
+
+  // .price-filter__label
+
+  &__label {
+    @include adaptiveValue("font-size", 16, 14, 1);
+    @include adaptiveValue("line-height", 20, 18, 1);
+    text-align: center;
+    padding: rem(11) 0;
+    @include adaptiveValue("padding-left", 15, 10, 1);
+    @include adaptiveValue("padding-right", 15, 10, 1);
+    flex: 1 1 50%;
+    &:not(:last-child) {
+      border-right: 1px solid #cbcbcb;
+    }
+  }
+  // .price-filter__input
+
+  &__input {
+    @include adaptiveValue("font-size", 16, 14, 1);
+    @include adaptiveValue("line-height", 20, 18, 1);
+    // padding: 0 rem(10);
+    &::placeholder {
+      color: $mainDarkColor;
+    }
+  }
+  // .price-filter__text
+
+  &__text {
+    @include adaptiveValue("font-size", 16, 14, 1);
+    @include adaptiveValue("line-height", 20, 18, 1);
+    cursor: default;
+  }
+
+  // .price-filter__range
+
+  &__range {
+    // @include adaptiveValue("margin-left", 30, 20, 1);
+    // @include adaptiveValue("margin-right", 30, 20, 1);
+    // border: 2px solid #000000;
+    width: 100%;
+    // &:not(:last-child) {
+    margin-bottom: rem(50);
+    // }
+  }
+}
+
+// .filter__img
+
+.filter__img {
+  transition: all 0.3s ease 0s;
+}
+.item-filter-catalog {
+  // .item-filter-catalog__title
+
+  &__title {
+    @extend %fontMontserrat600;
+    @include adaptiveValue("font-size", 20, 18, 1);
+    @include adaptiveValue("line-height", 24, 20, 1);
+    background: $mainDarkColor;
+    color: $whiteColor;
+    padding: rem(15) 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include adaptiveValue("padding-left", 30, 20, 1);
+    @include adaptiveValue("padding-right", 30, 20, 1);
+    &.spoller-init {
+      & .filter__img {
+        transform: rotate(540deg);
+        transition: all 0.3s ease 0s;
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  // .item-filter-catalog__body
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    flex-direction: column;
+    @include adaptiveValue("padding-left", 30, 20, 1);
+    @include adaptiveValue("padding-right", 30, 20, 1);
+    transition: all 0.3s ease-in-out 0s;
+    &.spoiler-body {
+      display: none;
+      transition: all 0.3s ease-in-out 0s;
+    }
+  }
+}
+.checkbox {
+  &__input {
+  }
+
+  // .checkbox__label
+
+  &__label {
+    @include adaptiveValue("font-size", 16, 14, 1);
+    @include adaptiveValue("line-height", 20, 18, 1);
+    & small {
+      color: $decorColor;
+    }
+  }
+
+  // .checkbox__text
+
+  &__text {
+    margin-left: rem(10);
+  }
+}

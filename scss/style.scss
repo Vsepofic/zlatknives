@@ -1,0 +1,86 @@
+// Подключение стилей переменных
+@import "vars";
+// Подключение стилей шрифтов
+@import "fonts";
+// Подключение стилей normalise
+@import "normalise";
+// Подключение стилей reset
+@import "reset";
+// Подключение стилей библиотек
+@import "libs";
+// Подключение стилей адаптива
+@import "_media";
+// Подключение стилей общих элементов проекта
+@import "global";
+// Подключение стилей разных базовых элементов проекта
+@import "base/base";
+// Подключение стилей отдельных блоков
+@import "header";
+@import "main";
+@import "products-hits";
+@import "products-new";
+@import "articles";
+@import "footer";
+// Подключение модальных окон
+@import "modal";
+// Подключение стилей отдельных страниц
+@import "catalog";
+@import "product";
+// @import "../../node_modules/swiper/swiper-bundle.css";
+//--- Ограничивающий контейнер ------------------------------------------------
+//  Стили будут применяться ко всем классам, содержащим *__container
+// например header__container, main__container и т.д.
+//  Снипет (HTML):  cnt
+
+// @if (responsiveType == 1) {
+//   //  отзывчивая
+//   [class*="__container"] {
+//     @if ($maxWidthContainer > 0) {
+//       max-width: rem($maxWidthContainer);
+//       box-sizing: content-box;
+//       margin: 0 auto;
+//     }
+//     @if ($containerPadding > 0) {
+//       padding: 0 rem(math.div($containerPadding, 2));
+//     }
+//   }
+// } @else {
+//   // по брек-поинтам
+//   [class*="__container"] {
+//     margin: 0 auto;
+//     @if ($maxWidthContainer > 0) {
+//       max-width: rem($maxWidthContainer);
+//       box-sizing: content-box;
+//     } @else {
+//       @if ($containerPadding > 0) {
+//         padding: 0 rem(math.div($containerPadding, 2));
+//       }
+//     }
+//     @media (max-width: $ps) {
+//       max-width: 970;
+//     }
+//     @media (max-width: $tablet) {
+//       max-width: 750;
+//     }
+//     @media (max-width: $mobile) {
+//       max-width: none;
+//       @if ($containerPadding > 0 and $maxWidthContainer > 0) {
+//         padding: 0 rem(math.div($containerPadding, 2));
+//       }
+//     }
+//   }
+// }
+
+// Основные стили
+
+.page {
+  // .page_home
+
+  &_home {
+  }
+
+  // .page__main-block
+
+  &__main-block {
+  }
+}

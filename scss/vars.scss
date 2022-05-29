@@ -1,0 +1,48 @@
+//* Настройки -----------------------------------------
+// https://www.youtube.com/watch?v=Tiwl8F185J0&t=398s
+@use "sass:math";
+// Минимальная ширина страницы
+$minWidth: 320 + px;
+// Ширина полотна (макета)
+$maxWidthContainerFluid: 1920 + px;
+// Ширина ограничивающего контейнера ( 0 - нет ограничения)
+$maxWidthContainer: 1600;
+// Общий отступ у контейнера
+// ( 30 = по 15px слева и справа, 0 - нет отступа)
+$containerPadding: 30;
+$containerSidePadding: math.div($containerPadding, 2);
+
+//* Основные цвета
+// Цвет шрифта по умолчанию
+$mainColor: #000; //*             color: $mainColor;
+// Настраиваемые цвета
+$whiteColor: #fff; //*            color: $whiteColor;
+$bgColor: #ecf1f2; //*            color: $bgColor;
+$bgCard: #fefefe; //*             color: $bgCard;
+$cardColor: #ababab; //*          color: $cardColor;
+$decorColor: #e8aa31; //*         color: $decorColor;
+$mainDarkColor: #141414; //*      color: $mainDarkColor;
+//* ---------------------------------------------------------------
+// To %
+@function prc($pxOne, $pxTwo) {
+  $result: math.div($pxOne, $pxTwo) * 100%;
+  @return $result;
+}
+// To REM
+@function rem($px) {
+  $result: math.div($px, 14) + rem;
+  @return $result;
+}
+// To EM
+@function em($px) {
+  $result: math.div($px, 14) + em;
+  @return $result;
+}
+//* ---------------------------------------------------------------
+
+//***                 @extend %img;
+%img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

@@ -1,0 +1,131 @@
+.select-form-group + .select-form-group {
+  margin-top: 10px;
+}
+
+/* *******************
+Select c dropdown на JS
+******************* */
+.select-label {
+}
+
+.select-dropdown {
+  position: relative;
+}
+
+.select-dropdown__button {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: rgba(20, 20, 20, 0.5);
+  background: #ffffff;
+  border: 1px solid rgba(4, 4, 4, 0.15);
+  border-radius: 3px;
+  height: rem(40);
+
+  padding: rem(12) rem(35) rem(12) rem(20);
+
+  cursor: pointer;
+}
+.select-dropdown__button--text {
+  color: $mainDarkColor;
+}
+
+.select-dropdown__button:focus,
+.select-dropdown__button--active {
+  outline: none;
+  box-shadow: 0px 0px 0px 2px rgba($cardColor, 0.5);
+}
+// //* 1 вариант стрелки
+// .select-dropdown__button::after {
+//   content: "";
+//   position: absolute;
+//   top: 50%;
+//   right: 15px;
+//   transform: translateY(-50%);
+//   /* Рисуем треугольник */
+//   width: 0;
+//   height: 0;
+//   border-width: 10.4px 6px 0 6px;
+//   border-color: $cardColor transparent transparent transparent;
+//   border-style: solid;
+//   /* Снимаем клик с треугольника */
+//   pointer-events: none;
+// }
+//* 2 вариант стрелки
+.select-dropdown__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: rem(40);
+  height: rem(39);
+  background: $mainDarkColor;
+  border-radius: 0 3px 3px 0;
+}
+.select-dropdown__button::after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  right: -15px;
+  transform: translateY(-50%);
+  width: rem(40);
+  height: rem(12);
+  background-image: url("../../../images/src/product/select.svg");
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.select-dropdown__list {
+  display: none;
+
+  position: absolute;
+  left: 0;
+  top: rem(50);
+
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  border-radius: 5px;
+  width: 100%;
+
+  z-index: 1;
+}
+
+.select-dropdown__list--visible {
+  display: block;
+}
+
+.select-dropdown__list-item {
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba($cardColor, 0.1);
+  border-bottom: 0px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.select-dropdown__list-item:first-child {
+  border-radius: 6px 6px 0 0;
+}
+
+.select-dropdown__list-item:last-child {
+  border-radius: 0 0 6px 6px;
+  border-bottom: 1px solid $cardColor;
+}
+
+.select-dropdown__list-item:hover {
+  background: $mainDarkColor;
+  color: $whiteColor;
+  transition: all 0.3s ease 0s;
+}
+
+.select-dropdown__input-hidden {
+  display: none;
+}
